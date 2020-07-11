@@ -11,7 +11,6 @@
         android:id="@+id/mood_tracking_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:background="#FF7B7B"
         android:text="GoodNote Moodtrack"
         android:textAllCaps="true"
@@ -20,26 +19,29 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="8dp"
         android:background="#FF7B7B"
         android:text="After listening to music, rate how you are feeling for today."
         android:textColor="#000000"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rating_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mood_tracking_title" />
+        app:layout_constraintTop_toBottomOf="@+id/mood_tracking_title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/mood_text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="#FF7B7B"
         android:text="Half star increments are allowed"
         android:textColor="#000000"
@@ -77,11 +79,12 @@
         app:layout_constraintTop_toTopOf="@+id/rating_bar"
         tools:ignore="MissingConstraints" />
 
+
     <RatingBar
         android:id="@+id/rating_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="472dp"
+        android:layout_marginBottom="364dp"
         android:background="#FF7B7B"
         android:numStars="5"
         android:stepSize="0.5"
@@ -94,34 +97,106 @@
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.321"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating_bar"
         tools:ignore="MissingConstraints" />
-
 
     <Button
         android:id="@+id/graph_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
         android:text="graph mood"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.709"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating_bar"
         tools:ignore="MissingConstraints" />
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"
-        android:layout_width="414dp"
-        android:layout_height="333dp"
+        android:layout_width="311dp"
+        android:layout_height="283dp"
         android:background="#FF7B7B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graph_button"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mood_text3" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/mon"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/mood_text3" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tues"
+        app:layout_constraintStart_toEndOf="@+id/switch2"
+        app:layout_constraintTop_toBottomOf="@+id/mood_text3" />
+
+    <Switch
+        android:id="@+id/switch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/wed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/switch3"
+        app:layout_constraintTop_toBottomOf="@+id/mood_text3" />
+
+    <Switch
+        android:id="@+id/switch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/thurs"
+        app:layout_constraintBottom_toTopOf="@+id/rating_bar"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/switch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/fri"
+        app:layout_constraintBottom_toTopOf="@+id/rating_bar"
+        app:layout_constraintStart_toEndOf="@+id/switch5" />
+
+    <Switch
+        android:id="@+id/switch7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/sat"
+        app:layout_constraintBottom_toTopOf="@+id/rating_bar"
+        app:layout_constraintStart_toEndOf="@+id/switch6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

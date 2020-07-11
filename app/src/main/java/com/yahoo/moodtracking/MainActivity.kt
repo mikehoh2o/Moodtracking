@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.RatingBar
 import android.widget.RatingBar.OnRatingBarChangeListener
+import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jjoe64.graphview.GraphView
@@ -25,6 +26,14 @@ class MainActivity : AppCompatActivity() {
         val submit = findViewById<View>(R.id.submit_button) as Button
         val graphButton = findViewById<View>(R.id.graph_button) as Button
         val moodGraph = findViewById<GraphView>(R.id.graph) as GraphView
+        val switchSun = findViewById<View>(R.id.switch1) as Switch
+        val switchMon = findViewById<View>(R.id.switch2) as Switch
+        val switchTues = findViewById<View>(R.id.switch3) as Switch
+        val switchWed = findViewById<View>(R.id.switch4) as Switch
+        val switchThurs = findViewById<View>(R.id.switch5) as Switch
+        val switchFri = findViewById<View>(R.id.switch6) as Switch
+        val switchSat = findViewById<View>(R.id.switch7) as Switch
+
         val mutableList:MutableList<Double> = mutableListOf()
 
         moodGraph.viewport.setMinX(0.0)
