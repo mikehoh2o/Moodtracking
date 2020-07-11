@@ -124,22 +124,22 @@ class MainActivity : AppCompatActivity() {
             if (rating < 1.0f) ratingBar.rating = 1.0f
         }
 
-        submit.setOnClickListener(View.OnClickListener {
-            val series =
-                LineGraphSeries(
-                    arrayOf<DataPoint>(
-                        DataPoint(0, rating_bar.rating.toDouble()),
-                        DataPoint(1, rating_bar.rating.toDouble()),
-                        DataPoint(2, rating_bar.rating.toDouble()),
-                        DataPoint(3, rating_bar.rating.toDouble()),
-                        DataPoint(4, rating_bar.rating.toDouble()),
-                        DataPoint(5, rating_bar.rating.toDouble()),
-                        DataPoint(6, rating_bar.rating.toDouble())
-                    )
-                )
-            graph.addSeries(series)
-        })
-    }
+//        submit.setOnClickListener(View.OnClickListener {
+//            val series =
+//                LineGraphSeries(
+//                    arrayOf<DataPoint>(
+//                        DataPoint(0, rating_bar.rating.toDouble()),
+//                        DataPoint(1, rating_bar.rating.toDouble()),
+//                        DataPoint(2, rating_bar.rating.toDouble()),
+//                        DataPoint(3, rating_bar.rating.toDouble()),
+//                        DataPoint(4, rating_bar.rating.toDouble()),
+//                        DataPoint(5, rating_bar.rating.toDouble()),
+//                        DataPoint(6, rating_bar.rating.toDouble())
+//                    )
+//                )
+//            graph.addSeries(series)
+//        })
+//    }
 
 
 
