@@ -8,4 +8,6 @@
     <string name="thurs">Thurs</string>
     <string name="fri">Fri</string>
     <string name="sat">Sat</string>
+    <string name="save">Save</string>
+    <string name="graph_mood">graph mood</string>
 </resources>

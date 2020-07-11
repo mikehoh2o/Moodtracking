@@ -7,6 +7,7 @@
     android:background="#CE2B37"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/mood_tracking_title"
         android:layout_width="wrap_content"
@@ -18,30 +19,27 @@
         android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:background="#FF7B7B"
         android:text="After listening to music, rate how you are feeling for today."
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rating_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mood_tracking_title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/mood_tracking_title" />
 
     <TextView
         android:id="@+id/mood_text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:background="#FF7B7B"
         android:text="Half star increments are allowed"
         android:textColor="#000000"
@@ -82,40 +80,97 @@
 
     <RatingBar
         android:id="@+id/rating_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="364dp"
+        android:layout_width="241dp"
+        android:layout_height="46dp"
         android:background="#FF7B7B"
         android:numStars="5"
         android:stepSize="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/graph"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fri_save_button" />
 
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/submit"
+        android:layout_width="87dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="180dp"
+        android:text="@string/graph_mood"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating_bar"
+        tools:ignore="MissingConstraints"
+        tools:text="Graph Mood" />
+
+    <Button
+        android:id="@+id/sun_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sun_mood_text"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/graph_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="graph mood"
+        android:id="@+id/mon_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="48dp"
+        android:text="@string/save"
+        app:layout_constraintStart_toEndOf="@+id/sun_save_button"
+        app:layout_constraintTop_toBottomOf="@+id/mon_mood_text" />
+
+    <Button
+        android:id="@+id/tues_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toStartOf="@+id/wed_save_button"
+        app:layout_constraintTop_toBottomOf="@+id/tues_mood_text" />
+
+    <Button
+        android:id="@+id/wed_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintTop_toBottomOf="@+id/wed_mood_text" />
+
+    <Button
+        android:id="@+id/thurs_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/save"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_bar"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/thurs_mood_text" />
+
+    <Button
+        android:id="@+id/fri_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toStartOf="@+id/sat_save_button"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/thurs_save_button"
+        app:layout_constraintTop_toBottomOf="@+id/fri_mood_text" />
+
+    <Button
+        android:id="@+id/sat_save_button"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sat_mood_text" />
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"
@@ -124,9 +179,8 @@
         android:background="#FF7B7B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/graph_button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Switch
         android:id="@+id/switch1"
@@ -174,29 +228,112 @@
         android:id="@+id/switch5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="164dp"
         android:text="@string/thurs"
         app:layout_constraintBottom_toTopOf="@+id/rating_bar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sun_save_button"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Switch
         android:id="@+id/switch6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="12dp"
         android:text="@string/fri"
-        app:layout_constraintBottom_toTopOf="@+id/rating_bar"
-        app:layout_constraintStart_toEndOf="@+id/switch5" />
+        app:layout_constraintEnd_toStartOf="@+id/switch7"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toEndOf="@+id/switch5"
+        app:layout_constraintTop_toBottomOf="@+id/mon_save_button" />
 
     <Switch
         android:id="@+id/switch7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/sat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wed_save_button" />
+
+    <TextView
+        android:id="@+id/sun_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:background="#F8F8F8"
+        android:text="Mood"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+    <TextView
+        android:id="@+id/mon_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:background="#FFFFFF"
+        android:text="Mood"
+        app:layout_constraintStart_toEndOf="@+id/sun_mood_text"
+        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+    <TextView
+        android:id="@+id/tues_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="88dp"
+        android:background="#FFFFFF"
+        android:text="Mood"
+        app:layout_constraintEnd_toStartOf="@+id/wed_mood_text"
+        app:layout_constraintTop_toBottomOf="@+id/switch3" />
+
+    <TextView
+        android:id="@+id/wed_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:background="#FFFFFF"
+        android:text="Mood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch4" />
+
+    <TextView
+        android:id="@+id/thurs_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="140dp"
+        android:background="#FFFFFF"
+        android:text="Mood"
         app:layout_constraintBottom_toTopOf="@+id/rating_bar"
-        app:layout_constraintStart_toEndOf="@+id/switch6" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fri_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="188dp"
+        android:background="#FFFFFF"
+        android:text="Mood"
+        app:layout_constraintEnd_toStartOf="@+id/sat_mood_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch6" />
+
+    <TextView
+        android:id="@+id/sat_mood_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:background="#FFFFFF"
+        android:text="Mood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch7" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
