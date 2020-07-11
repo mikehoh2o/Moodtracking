@@ -13,52 +13,23 @@ import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        loadDataSun()
-        loadDataMon()
-        loadDataTues()
-        loadDataWed()
-        loadDataThurs()
-        loadDataFri()
-        loadDataSat()
-
-        sun_save_button.setOnClickListener {
-            saveDataSun(ratingBar = rating_bar)
-        }
-
-        mon_save_button.setOnClickListener {
-            saveDataMon(ratingBar = rating_bar)
-        }
-
-        tues_save_button.setOnClickListener {
-            saveDataTues(ratingBar = rating_bar)
-        }
-
-        wed_save_button.setOnClickListener {
-            saveDataWed(ratingBar = rating_bar)
-        }
-
-        thurs_save_button.setOnClickListener {
-            saveDataThurs(ratingBar = rating_bar)
-        }
-
-        fri_save_button.setOnClickListener {
-            saveDataFri(ratingBar = rating_bar)
-        }
-
-        sat_save_button.setOnClickListener {
-            saveDataSat(ratingBar = rating_bar)
-        }
-
         val rate = findViewById<View>(R.id.rating_bar) as RatingBar
-        val submit = findViewById<View>(R.id.submit_button) as Button
+        val graphButton = findViewById<View>(R.id.graph_button) as Button
         val moodGraph = findViewById<GraphView>(R.id.graph) as GraphView
+        val sunSaveButton = findViewById<View>(R.id.sun_save_button) as Button
+        val monSaveButton = findViewById<View>(R.id.mon_save_button) as Button
+        val tuesSaveButton = findViewById<View>(R.id.tues_save_button) as Button
+        val wedSaveButton = findViewById<View>(R.id.wed_save_button) as Button
+        val thursSaveButton = findViewById<View>(R.id.thurs_save_button) as Button
+        val friSaveButton = findViewById<View>(R.id.fri_save_button) as Button
+        val satSaveButton = findViewById<View>(R.id.sat_save_button) as Button
+
         val switchSun = findViewById<View>(R.id.switch1) as Switch
         val switchMon = findViewById<View>(R.id.switch2) as Switch
         val switchTues = findViewById<View>(R.id.switch3) as Switch
@@ -74,13 +45,40 @@ class MainActivity : AppCompatActivity() {
         val friText = findViewById<View>(R.id.fri_mood_text) as TextView
         val satText = findViewById<View>(R.id.sat_mood_text) as TextView
 
-        var moodRating = rate.rating
-        val mutableList:MutableList<Double> = mutableListOf()
+        loadDataSun()
+        loadDataMon()
+        loadDataTues()
+        loadDataWed()
+        loadDataThurs()
+        loadDataFri()
+        loadDataSat()
+
+        sunSaveButton.setOnClickListener {
+            saveDataSun(ratingBar = rating_bar)
+        }
+        monSaveButton.setOnClickListener {
+            saveDataMon(ratingBar = rating_bar)
+        }
+        tuesSaveButton.setOnClickListener {
+            saveDataTues(ratingBar = rating_bar)
+        }
+        wedSaveButton.setOnClickListener {
+            saveDataWed(ratingBar = rating_bar)
+        }
+        thursSaveButton.setOnClickListener {
+            saveDataThurs(ratingBar = rating_bar)
+        }
+        friSaveButton.setOnClickListener {
+            saveDataFri(ratingBar = rating_bar)
+        }
+        satSaveButton.setOnClickListener {
+            saveDataSat(ratingBar = rating_bar)
+        }
 
         moodGraph.viewport.setMinX(0.0)
-        moodGraph.viewport.setMaxX(7.0)
-        moodGraph.viewport.setMinY(0.0)
-        moodGraph.viewport.setMaxY(4.0)
+        moodGraph.viewport.setMaxX(6.0)
+        moodGraph.viewport.setMinY(1.0)
+        moodGraph.viewport.setMaxY(5.0)
         moodGraph.viewport.isYAxisBoundsManual = true
         moodGraph.viewport.isXAxisBoundsManual = true
         moodGraph.viewport.isScalable = true
@@ -124,24 +122,30 @@ class MainActivity : AppCompatActivity() {
             if (rating < 1.0f) ratingBar.rating = 1.0f
         }
 
-//        submit.setOnClickListener(View.OnClickListener {
-//            val series =
-//                LineGraphSeries(
-//                    arrayOf<DataPoint>(
-//                        DataPoint(0, rating_bar.rating.toDouble()),
-//                        DataPoint(1, rating_bar.rating.toDouble()),
-//                        DataPoint(2, rating_bar.rating.toDouble()),
-//                        DataPoint(3, rating_bar.rating.toDouble()),
-//                        DataPoint(4, rating_bar.rating.toDouble()),
-//                        DataPoint(5, rating_bar.rating.toDouble()),
-//                        DataPoint(6, rating_bar.rating.toDouble())
-//                    )
-//                )
-//            graph.addSeries(series)
-//        })
+        graphButton.setOnClickListener(View.OnClickListener {
+            val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+            val sundayDP: Double = sharedPreferences.getString("STRING_KEY1", "")!!.toDouble()
+            val mondayDP: Double = sharedPreferences.getString("STRING_KEY2", "")!!.toDouble()
+            val tuesdayDP: Double = sharedPreferences.getString("STRING_KEY3", "")!!.toDouble()
+            val wednesdayDP: Double = sharedPreferences.getString("STRING_KEY4", "")!!.toDouble()
+            val thursdayDP: Double = sharedPreferences.getString("STRING_KEY5", "")!!.toDouble()
+            val fridayDP: Double = sharedPreferences.getString("STRING_KEY6", "")!!.toDouble()
+            val saturdayDP: Double = sharedPreferences.getString("STRING_KEY7", "")!!.toDouble()
+            val series =
+                LineGraphSeries(
+                    arrayOf<DataPoint>(
+                        DataPoint(0.0, sundayDP),
+                        DataPoint(1.0, mondayDP),
+                        DataPoint(2.0, tuesdayDP),
+                        DataPoint(3.0, wednesdayDP),
+                        DataPoint(4.0, thursdayDP),
+                        DataPoint(5.0, fridayDP),
+                        DataPoint(6.0, saturdayDP)
+                    )
+                )
+            graph.addSeries(series)
+        })
     }
-
-
 
     private fun saveDataSun(ratingBar: RatingBar) {
         val insertedText = ratingBar.rating.toString()
