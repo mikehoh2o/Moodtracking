@@ -110,6 +110,7 @@
         android:layout_width="60dp"
         android:layout_height="38dp"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -121,8 +122,10 @@
         android:id="@+id/mon_save_button"
         android:layout_width="60dp"
         android:layout_height="38dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="40dp"
         android:text="@string/save"
+        app:layout_constraintEnd_toStartOf="@+id/tues_save_button"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/sun_save_button"
         app:layout_constraintTop_toBottomOf="@+id/mon_mood_text" />
 
@@ -130,9 +133,11 @@
         android:id="@+id/tues_save_button"
         android:layout_width="60dp"
         android:layout_height="38dp"
+        android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:text="@string/save"
         app:layout_constraintEnd_toStartOf="@+id/wed_save_button"
+        app:layout_constraintStart_toEndOf="@+id/mon_save_button"
         app:layout_constraintTop_toBottomOf="@+id/tues_mood_text" />
 
     <Button
@@ -142,13 +147,14 @@
         android:layout_marginEnd="20dp"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tues_save_button"
         app:layout_constraintTop_toBottomOf="@+id/wed_mood_text" />
 
     <Button
         android:id="@+id/thurs_save_button"
         android:layout_width="60dp"
         android:layout_height="38dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="75dp"
         android:text="@string/save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thurs_mood_text" />
@@ -167,7 +173,7 @@
         android:id="@+id/sat_save_button"
         android:layout_width="60dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="74dp"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sat_mood_text" />
@@ -262,7 +268,7 @@
         android:id="@+id/sun_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="40dp"
         android:background="#F8F8F8"
         android:text="Mood"
         app:layout_constraintStart_toStartOf="parent"
@@ -272,7 +278,7 @@
         android:id="@+id/mon_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="86dp"
         android:background="#FFFFFF"
         android:text="Mood"
         app:layout_constraintStart_toEndOf="@+id/sun_mood_text"
@@ -282,7 +288,7 @@
         android:id="@+id/tues_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="86dp"
         android:background="#FFFFFF"
         android:text="Mood"
         app:layout_constraintEnd_toStartOf="@+id/wed_mood_text"
@@ -292,7 +298,7 @@
         android:id="@+id/wed_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="40dp"
         android:background="#FFFFFF"
         android:text="Mood"
         app:layout_constraintEnd_toEndOf="parent"
@@ -302,7 +308,7 @@
         android:id="@+id/thurs_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="94dp"
         android:layout_marginBottom="140dp"
         android:background="#FFFFFF"
         android:text="Mood"
@@ -315,11 +321,11 @@
         android:id="@+id/fri_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="188dp"
+        android:layout_marginStart="184dp"
         android:background="#FFFFFF"
         android:text="Mood"
         app:layout_constraintEnd_toStartOf="@+id/sat_mood_text"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch6" />
 
@@ -327,9 +333,9 @@
         android:id="@+id/sat_mood_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="94dp"
         android:background="#FFFFFF"
-        android:text="Mood"
+        android:text="@string/mood"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch7" />
 
@@ -340,13 +346,92 @@
         android:layout_marginBottom="18dp"
         android:orientation="vertical"
         android:rotation="-90"
-        android:text="Sat"
+        android:text="@string/sat"
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.987"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/sun_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/sunday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sun_mood_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/monday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mon_mood_text"
+        app:layout_constraintStart_toEndOf="@+id/sun_title" />
+
+    <TextView
+        android:id="@+id/tues_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tuesday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tues_mood_text"
+        app:layout_constraintStart_toEndOf="@+id/mon_title" />
+
+    <TextView
+        android:id="@+id/wed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/wednesday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/wed_mood_text"
+        app:layout_constraintStart_toEndOf="@+id/tues_title" />
+
+    <TextView
+        android:id="@+id/thurs_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/thursday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/thurs_mood_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fri_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/friday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/switch6"
+        app:layout_constraintStart_toEndOf="@+id/thurs_title" />
+
+    <TextView
+        android:id="@+id/sat_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/saturday"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sat_mood_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toEndOf="@+id/fri_title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

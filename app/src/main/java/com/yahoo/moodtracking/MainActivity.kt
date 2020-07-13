@@ -53,6 +53,15 @@ class MainActivity : AppCompatActivity() {
         loadDataFri()
         loadDataSat()
 
+        switchSun.visibility = View.INVISIBLE
+        switchMon.visibility = View.INVISIBLE
+        switchTues.visibility = View.INVISIBLE
+        switchWed.visibility = View.INVISIBLE
+        switchThurs.visibility = View.INVISIBLE
+        switchFri.visibility = View.INVISIBLE
+        switchSat.visibility = View.INVISIBLE
+
+
         sunSaveButton.setOnClickListener {
             saveDataSun(ratingBar = rating_bar)
         }
